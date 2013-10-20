@@ -58,6 +58,10 @@ body {
   top: 3px;
 }
 
+#post-to-friend.search:active {
+  top: 0px !important;
+}
+
 #loader {
   background: url(../images/loader.gif);
   display: inline-block;
@@ -116,21 +120,28 @@ body {
 
 #message {
   background: #fff;
-  color: #38A757;
   display: none;
   font: bold 30px "Open Sans Condensed", sans-serif;
   height: 80px;
+  left: 150px;
   line-height: 80px;
-  margin: 0 auto;
-  position: relative;
+  position: absolute;
   text-align: center;
-  top: 100px;
+  top: 200px;
   width: 300px;
   z-index: 20;
 
   -webkit-box-shadow: 0px 0px 20px rgba(50, 50, 50, 1);
   -moz-box-shadow:    0px 0px 20px rgba(50, 50, 50, 1);
   box-shadow:         0px 0px 20px rgba(50, 50, 50, 1);
+}
+
+.success {
+  color: #38A757;
+}
+
+.failure {
+  color: #C25050;
 }
 
 #quote {

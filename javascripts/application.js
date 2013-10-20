@@ -65,13 +65,18 @@ $(function() {
 
     function wallPost(data){
         var postData = {
-            owner_id: data.friend_id,
-            message: data.message,
-            attachments: data.audio + "," + data.photo
-        };
+                owner_id: data.friend_id,
+                message: data.message,
+                attachments: data.audio + "," + data.photo
+            }, message = {
+                success: "ПОСТ СОЗДАН!",
+                failure: "СТЕНА ДРУГА ЗАКРЫТА"
+            };
         VK.api("wall.post", postData, function(data) {
             if (data.response) {
-                $("#message").fadeIn(1000, function(){ $(this).delay(2000).fadeOut(1000) });
+                $("#message").html(message.success).removeClass().addClass("success").fadeIn(1000, function(){ $(this).delay(2000).fadeOut(1000) });
+            } else if (data.error.error_code == 214) {
+                $("#message").html(message.failure).removeClass().addClass("failure").fadeIn(1000, function(){ $(this).delay(2000).fadeOut(1000) });
             }
         });
     }
@@ -106,17 +111,21 @@ $(function() {
     function postToFriendButton(type) {
         var button = $("#post-to-friend");
         if (type == "default") {
-            button.children("#text").show().end()
+            button.removeClass()
+                  .children("#text").show().end()
                   .children("#loader").hide().end()
                   .children("#search").hide();
         } else if (type == "loader") {
-            button.children("#text").hide().end()
+            button.removeClass()
+                  .children("#text").hide().end()
                   .children("#loader").show().end()
                   .children("#search").hide();
         } else if (type == "search") {
-            button.children("#text").hide().end()
+            button.addClass("search")
+                  .children("#text").hide().end()
                   .children("#loader").hide().end()
-                  .children("#search").show();
+                  .children("#search").show()
+                  .children("#search-field").focus();
         }
     }
 
