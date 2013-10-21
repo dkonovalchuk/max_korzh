@@ -1,0 +1,159 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 500px;
+  margin: auto;
+  width: 607px;
+
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.container {
+  height: 100%;
+  margin: 0 auto;
+  width: 500px;
+  padding-top: 50px;
+}
+
+.hidden { display: none !important; }
+
+#post-to-own, #post-to-friend {
+  background: #fff;
+  color: #555;
+  display: inline-block;
+  font: bold 21px "Open Sans Condensed", sans-serif;
+  height: 60px;
+  text-align: center;
+  padding: 0;
+  position: relative;
+  line-height: 60px;
+  text-decoration: none;
+  width: 240px;
+  z-index: 10;
+
+  -webkit-box-shadow: 0px 0px 10px rgba(50, 50, 50, 1);
+  -moz-box-shadow:    0px 0px 10px rgba(50, 50, 50, 1);
+  box-shadow:         0px 0px 10px rgba(50, 50, 50, 1);
+}
+
+#post-to-friend {
+  margin-left: 16px;
+}
+
+#post-to-own:hover, #post-to-friend:hover {
+  color: #111;
+}
+
+#post-to-own:active, #post-to-friend:active {
+  top: 3px;
+}
+
+#post-to-friend.search:active {
+  top: 0px !important;
+}
+
+#loader {
+  background: url(../images/loader.gif);
+  display: inline-block;
+  height: 32px;
+  position: relative;
+  top: 8px;
+  width: 32px;
+}
+
+#friends {
+  background: #fff;
+  height: auto;
+  margin-left: 260px;
+  max-height: 260px;
+  overflow-y: scroll;
+  width: 240px;
+}
+
+#friends ul li a {
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
+  padding: 5px 5px;
+  width: 213px;
+  z-index: 20;
+}
+
+#friends ul li a:hover {
+  background: #efefef;
+  font-weight: bold;
+}
+
+#friends ul li a .avatar {
+  float: left;
+  height: 50px;
+  width: 50px;
+}
+
+#friends ul li a .name {
+  color: #333;
+  float: left;
+  font: 16px "Open Sans Condensed", sans-serif;
+  line-height: 50px;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+#search-field {
+  font-size: 18px;
+  font-weight: normal;
+  padding: 7px;
+  position: relative;
+  top: -2px;
+  width: 192px;
+}
+
+#message {
+  background: #fff;
+  display: none;
+  font: bold 30px "Open Sans Condensed", sans-serif;
+  height: 80px;
+  left: 150px;
+  line-height: 80px;
+  position: absolute;
+  text-align: center;
+  top: 200px;
+  width: 300px;
+  z-index: 20;
+
+  -webkit-box-shadow: 0px 0px 20px rgba(50, 50, 50, 1);
+  -moz-box-shadow:    0px 0px 20px rgba(50, 50, 50, 1);
+  box-shadow:         0px 0px 20px rgba(50, 50, 50, 1);
+}
+
+.success {
+  color: #38A757;
+}
+
+.failure {
+  color: #C25050;
+}
+
+#quote {
+  bottom: 50px;
+  color: #fff;
+  font-family: "Lobster", cursive;
+  position: absolute;
+  text-align: right;
+  width: 500px;
+  z-index: 10;
+}
+
+#quote .main {
+  font-size: 20px;
+}
